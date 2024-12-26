@@ -3,4 +3,10 @@ export interface Character {
     name: string;
     image: string;
     species: string;
+    status: string;
+    type?: string;
+    location: {
+        name:string
+    }
+    episode: []
 }

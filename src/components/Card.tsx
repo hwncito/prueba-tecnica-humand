@@ -1,3 +1,4 @@
+import { Link } from 'react-router-dom';
 import { Character } from '../interfaces/character';
 
 interface CardProps {
@@ -5,18 +6,12 @@ interface CardProps {
 }
 
 export default function Card({ character }: CardProps) {
-  const testData = {
-    id: 1,
-    name: 'Juan',
-    image: '',
-    specie: 'human',
-  };
 
   return (
-    <div className='flex flex-col w-[240px] rounded-md p-4 bg-gray-100 shadow-md'>
-      <img className='rounded-md' src={character.image} alt="" />
+    <Link to={`/${character.id}`} className='flex flex-col w-[240px] rounded-md p-4 bg-gray-100 shadow-md'>
+      <img className='rounded-md' src={character.image} alt="image of the character" />
       <h3 className='font-semibold text-xl my-2'>{character.name}</h3>
       <p className='font-medium text-lg'>{character.species}</p>
-    </div>
+    </Link>
   );
 }
